@@ -1,0 +1,19 @@
+syntax = "proto3";
+
+import "ebook.proto";
+
+option java_multiple_files = true;
+option java_outer_classname = "UsuarioProto";
+option java_package = "br.com.danielschiavo.livrariavirtual.protos";
+
+message Usuario {
+
+  optional string id = 1;
+
+  optional string nome = 2;
+
+  optional string email = 3;
+
+  repeated Ebook ebooks = 4;
+
+}

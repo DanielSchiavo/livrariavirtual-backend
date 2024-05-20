@@ -1,0 +1,25 @@
+syntax = "proto3";
+
+import "google/protobuf/timestamp.proto";
+
+option java_multiple_files = true;
+option java_outer_classname = "EbookProto";
+option java_package = "br.com.danielschiavo.livrariavirtual.protos";
+
+message Ebook {
+
+  optional string id = 1;
+
+  optional string nome = 2;
+
+  optional string nome_arquivo = 3;
+
+  optional bytes imagem_capa = 4;
+
+  optional int32 pagina_atual = 5;
+
+  optional google.protobuf.Timestamp data_e_hora_adicao = 6;
+
+  optional string senha_do_ebook = 7;
+
+}
