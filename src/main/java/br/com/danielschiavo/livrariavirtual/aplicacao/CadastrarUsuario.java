@@ -1,8 +1,8 @@
 package br.com.danielschiavo.livrariavirtual.aplicacao;
 
+import br.com.danielschiavo.livrariavirtual.dto.CadastrarUsuarioDTO;
 import br.com.danielschiavo.livrariavirtual.modelo.RepositorioDeUsuario;
 import br.com.danielschiavo.livrariavirtual.modelo.Usuario;
-import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
 @Service
@@ -20,13 +20,13 @@ public class CadastrarUsuario {
         this.usuarioMapper = usuarioMapper;
     }
 
-    public String executa(CadastrarUsuarioDTO cadastrarUsuarioDTO) {
+    public Usuario executa(CadastrarUsuarioDTO cadastrarUsuarioDTO) {
         Usuario usuario = usuarioMapper.cadastrarUsuarioDTOParaUsuario(cadastrarUsuarioDTO);
-
         usuario.setId(geradorUUID.gerar());
 
         repositorioUsuario.cadastrarUsuario(usuario);
 
-        return "Cadastrado com sucesso";
+//        return "Cadastrado com sucesso";
+        return usuario;
     }
 }

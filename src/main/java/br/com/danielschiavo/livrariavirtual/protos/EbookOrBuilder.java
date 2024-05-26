@@ -71,43 +71,54 @@ public interface EbookOrBuilder extends
   com.google.protobuf.ByteString getImagemCapa();
 
   /**
-   * <code>optional int32 pagina_atual = 5;</code>
+   * <code>optional bytes conteudo = 5;</code>
+   * @return Whether the conteudo field is set.
+   */
+  boolean hasConteudo();
+  /**
+   * <code>optional bytes conteudo = 5;</code>
+   * @return The conteudo.
+   */
+  com.google.protobuf.ByteString getConteudo();
+
+  /**
+   * <code>optional int32 pagina_atual = 6;</code>
    * @return Whether the paginaAtual field is set.
    */
   boolean hasPaginaAtual();
   /**
-   * <code>optional int32 pagina_atual = 5;</code>
+   * <code>optional int32 pagina_atual = 6;</code>
    * @return The paginaAtual.
    */
   int getPaginaAtual();
 
   /**
-   * <code>optional .google.protobuf.Timestamp data_e_hora_adicao = 6;</code>
+   * <code>optional .google.protobuf.Timestamp data_e_hora_adicao = 7;</code>
    * @return Whether the dataEHoraAdicao field is set.
    */
   boolean hasDataEHoraAdicao();
   /**
-   * <code>optional .google.protobuf.Timestamp data_e_hora_adicao = 6;</code>
+   * <code>optional .google.protobuf.Timestamp data_e_hora_adicao = 7;</code>
    * @return The dataEHoraAdicao.
    */
   com.google.protobuf.Timestamp getDataEHoraAdicao();
   /**
-   * <code>optional .google.protobuf.Timestamp data_e_hora_adicao = 6;</code>
+   * <code>optional .google.protobuf.Timestamp data_e_hora_adicao = 7;</code>
    */
   com.google.protobuf.TimestampOrBuilder getDataEHoraAdicaoOrBuilder();
 
   /**
-   * <code>optional string senha_do_ebook = 7;</code>
+   * <code>optional string senha_do_ebook = 8;</code>
    * @return Whether the senhaDoEbook field is set.
    */
   boolean hasSenhaDoEbook();
   /**
-   * <code>optional string senha_do_ebook = 7;</code>
+   * <code>optional string senha_do_ebook = 8;</code>
    * @return The senhaDoEbook.
    */
   java.lang.String getSenhaDoEbook();
   /**
-   * <code>optional string senha_do_ebook = 7;</code>
+   * <code>optional string senha_do_ebook = 8;</code>
    * @return The bytes for senhaDoEbook.
    */
   com.google.protobuf.ByteString

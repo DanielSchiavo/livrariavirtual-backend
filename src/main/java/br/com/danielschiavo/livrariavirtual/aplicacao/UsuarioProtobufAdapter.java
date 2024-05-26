@@ -1,9 +1,11 @@
 package br.com.danielschiavo.livrariavirtual.aplicacao;
 
-public interface UsuarioProtobufAdapter {
+import br.com.danielschiavo.livrariavirtual.modelo.Usuario;
 
-    br.com.danielschiavo.livrariavirtual.protos.Usuario toProto(br.com.danielschiavo.livrariavirtual.modelo.Usuario usuario);
+public interface UsuarioProtobufAdapter extends EbookProtobufAdapter {
 
-    br.com.danielschiavo.livrariavirtual.modelo.Usuario fromProto(br.com.danielschiavo.livrariavirtual.protos.Usuario usuarioProto);
+    br.com.danielschiavo.livrariavirtual.protos.Usuario toProto(Usuario usuario);
+
+    Usuario fromProto(br.com.danielschiavo.livrariavirtual.protos.Usuario usuarioProto);
 
 }

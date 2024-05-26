@@ -4,18 +4,16 @@ import br.com.danielschiavo.livrariavirtual.modelo.RepositorioDeUsuario;
 import br.com.danielschiavo.livrariavirtual.modelo.Usuario;
 import org.springframework.stereotype.Service;
 
-import java.util.List;
-
 @Service
-public class PegarTodosUsuarios {
+public class PegarUsuario {
 
     private RepositorioDeUsuario repositorioUsuario;
 
-    public PegarTodosUsuarios(RepositorioDeUsuario repositorioDeUsuario) {
+    public PegarUsuario(RepositorioDeUsuario repositorioDeUsuario) {
         this.repositorioUsuario = repositorioDeUsuario;
     }
 
-    public List<Usuario> executa() {
-        return repositorioUsuario.pegarTodosUsuarios();
+    public Usuario executa() {
+        return repositorioUsuario.pegarUsuario();
     }
 }

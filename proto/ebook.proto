@@ -16,10 +16,12 @@ message Ebook {
 
   optional bytes imagem_capa = 4;
 
-  optional int32 pagina_atual = 5;
+  optional bytes conteudo = 5;
 
-  optional google.protobuf.Timestamp data_e_hora_adicao = 6;
+  optional int32 pagina_atual = 6;
 
-  optional string senha_do_ebook = 7;
+  optional google.protobuf.Timestamp data_e_hora_adicao = 7;
+
+  optional string senha_do_ebook = 8;
 
 }

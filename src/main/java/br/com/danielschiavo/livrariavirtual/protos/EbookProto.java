@@ -39,16 +39,17 @@ public final class EbookProto {
   static {
     java.lang.String[] descriptorData = {
       "\n\013ebook.proto\032\037google/protobuf/timestamp" +
-      ".proto\"\301\002\n\005Ebook\022\017\n\002id\030\001 \001(\tH\000\210\001\001\022\021\n\004nom" +
+      ".proto\"\345\002\n\005Ebook\022\017\n\002id\030\001 \001(\tH\000\210\001\001\022\021\n\004nom" +
       "e\030\002 \001(\tH\001\210\001\001\022\031\n\014nome_arquivo\030\003 \001(\tH\002\210\001\001\022" +
-      "\030\n\013imagem_capa\030\004 \001(\014H\003\210\001\001\022\031\n\014pagina_atua" +
-      "l\030\005 \001(\005H\004\210\001\001\022;\n\022data_e_hora_adicao\030\006 \001(\013" +
-      "2\032.google.protobuf.TimestampH\005\210\001\001\022\033\n\016sen" +
-      "ha_do_ebook\030\007 \001(\tH\006\210\001\001B\005\n\003_idB\007\n\005_nomeB\017" +
-      "\n\r_nome_arquivoB\016\n\014_imagem_capaB\017\n\r_pagi" +
-      "na_atualB\025\n\023_data_e_hora_adicaoB\021\n\017_senh" +
-      "a_do_ebookB;\n+br.com.danielschiavo.livra" +
-      "riavirtual.protosB\nEbookProtoP\001b\006proto3"
+      "\030\n\013imagem_capa\030\004 \001(\014H\003\210\001\001\022\025\n\010conteudo\030\005 " +
+      "\001(\014H\004\210\001\001\022\031\n\014pagina_atual\030\006 \001(\005H\005\210\001\001\022;\n\022d" +
+      "ata_e_hora_adicao\030\007 \001(\0132\032.google.protobu" +
+      "f.TimestampH\006\210\001\001\022\033\n\016senha_do_ebook\030\010 \001(\t" +
+      "H\007\210\001\001B\005\n\003_idB\007\n\005_nomeB\017\n\r_nome_arquivoB\016" +
+      "\n\014_imagem_capaB\013\n\t_conteudoB\017\n\r_pagina_a" +
+      "tualB\025\n\023_data_e_hora_adicaoB\021\n\017_senha_do" +
+      "_ebookB;\n+br.com.danielschiavo.livrariav" +
+      "irtual.protosB\nEbookProtoP\001b\006proto3"
     };
     descriptor = com.google.protobuf.Descriptors.FileDescriptor
       .internalBuildGeneratedFileFrom(descriptorData,
@@ -60,7 +61,7 @@ public final class EbookProto {
     internal_static_Ebook_fieldAccessorTable = new
       com.google.protobuf.GeneratedMessage.FieldAccessorTable(
         internal_static_Ebook_descriptor,
-        new java.lang.String[] { "Id", "Nome", "NomeArquivo", "ImagemCapa", "PaginaAtual", "DataEHoraAdicao", "SenhaDoEbook", });
+        new java.lang.String[] { "Id", "Nome", "NomeArquivo", "ImagemCapa", "Conteudo", "PaginaAtual", "DataEHoraAdicao", "SenhaDoEbook", });
     descriptor.resolveAllFeaturesImmutable();
     com.google.protobuf.TimestampProto.getDescriptor();
   }

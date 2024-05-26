@@ -30,6 +30,7 @@ private static final long serialVersionUID = 0L;
     nome_ = "";
     nomeArquivo_ = "";
     imagemCapa_ = com.google.protobuf.ByteString.EMPTY;
+    conteudo_ = com.google.protobuf.ByteString.EMPTY;
     senhaDoEbook_ = "";
   }
 
@@ -207,18 +208,37 @@ private static final long serialVersionUID = 0L;
     return imagemCapa_;
   }
 
-  public static final int PAGINA_ATUAL_FIELD_NUMBER = 5;
+  public static final int CONTEUDO_FIELD_NUMBER = 5;
+  private com.google.protobuf.ByteString conteudo_ = com.google.protobuf.ByteString.EMPTY;
+  /**
+   * <code>optional bytes conteudo = 5;</code>
+   * @return Whether the conteudo field is set.
+   */
+  @java.lang.Override
+  public boolean hasConteudo() {
+    return ((bitField0_ & 0x00000010) != 0);
+  }
+  /**
+   * <code>optional bytes conteudo = 5;</code>
+   * @return The conteudo.
+   */
+  @java.lang.Override
+  public com.google.protobuf.ByteString getConteudo() {
+    return conteudo_;
+  }
+
+  public static final int PAGINA_ATUAL_FIELD_NUMBER = 6;
   private int paginaAtual_ = 0;
   /**
-   * <code>optional int32 pagina_atual = 5;</code>
+   * <code>optional int32 pagina_atual = 6;</code>
    * @return Whether the paginaAtual field is set.
    */
   @java.lang.Override
   public boolean hasPaginaAtual() {
-    return ((bitField0_ & 0x00000010) != 0);
+    return ((bitField0_ & 0x00000020) != 0);
   }
   /**
-   * <code>optional int32 pagina_atual = 5;</code>
+   * <code>optional int32 pagina_atual = 6;</code>
    * @return The paginaAtual.
    */
   @java.lang.Override
@@ -226,18 +246,18 @@ private static final long serialVersionUID = 0L;
     return paginaAtual_;
   }
 
-  public static final int DATA_E_HORA_ADICAO_FIELD_NUMBER = 6;
+  public static final int DATA_E_HORA_ADICAO_FIELD_NUMBER = 7;
   private com.google.protobuf.Timestamp dataEHoraAdicao_;
   /**
-   * <code>optional .google.protobuf.Timestamp data_e_hora_adicao = 6;</code>
+   * <code>optional .google.protobuf.Timestamp data_e_hora_adicao = 7;</code>
    * @return Whether the dataEHoraAdicao field is set.
    */
   @java.lang.Override
   public boolean hasDataEHoraAdicao() {
-    return ((bitField0_ & 0x00000020) != 0);
+    return ((bitField0_ & 0x00000040) != 0);
   }
   /**
-   * <code>optional .google.protobuf.Timestamp data_e_hora_adicao = 6;</code>
+   * <code>optional .google.protobuf.Timestamp data_e_hora_adicao = 7;</code>
    * @return The dataEHoraAdicao.
    */
   @java.lang.Override
@@ -245,26 +265,26 @@ private static final long serialVersionUID = 0L;
     return dataEHoraAdicao_ == null ? com.google.protobuf.Timestamp.getDefaultInstance() : dataEHoraAdicao_;
   }
   /**
-   * <code>optional .google.protobuf.Timestamp data_e_hora_adicao = 6;</code>
+   * <code>optional .google.protobuf.Timestamp data_e_hora_adicao = 7;</code>
    */
   @java.lang.Override
   public com.google.protobuf.TimestampOrBuilder getDataEHoraAdicaoOrBuilder() {
     return dataEHoraAdicao_ == null ? com.google.protobuf.Timestamp.getDefaultInstance() : dataEHoraAdicao_;
   }
 
-  public static final int SENHA_DO_EBOOK_FIELD_NUMBER = 7;
+  public static final int SENHA_DO_EBOOK_FIELD_NUMBER = 8;
   @SuppressWarnings("serial")
   private volatile java.lang.Object senhaDoEbook_ = "";
   /**
-   * <code>optional string senha_do_ebook = 7;</code>
+   * <code>optional string senha_do_ebook = 8;</code>
    * @return Whether the senhaDoEbook field is set.
    */
   @java.lang.Override
   public boolean hasSenhaDoEbook() {
-    return ((bitField0_ & 0x00000040) != 0);
+    return ((bitField0_ & 0x00000080) != 0);
   }
   /**
-   * <code>optional string senha_do_ebook = 7;</code>
+   * <code>optional string senha_do_ebook = 8;</code>
    * @return The senhaDoEbook.
    */
   @java.lang.Override
@@ -281,7 +301,7 @@ private static final long serialVersionUID = 0L;
     }
   }
   /**
-   * <code>optional string senha_do_ebook = 7;</code>
+   * <code>optional string senha_do_ebook = 8;</code>
    * @return The bytes for senhaDoEbook.
    */
   @java.lang.Override
@@ -326,13 +346,16 @@ private static final long serialVersionUID = 0L;
       output.writeBytes(4, imagemCapa_);
     }
     if (((bitField0_ & 0x00000010) != 0)) {
-      output.writeInt32(5, paginaAtual_);
+      output.writeBytes(5, conteudo_);
     }
     if (((bitField0_ & 0x00000020) != 0)) {
-      output.writeMessage(6, getDataEHoraAdicao());
+      output.writeInt32(6, paginaAtual_);
     }
     if (((bitField0_ & 0x00000040) != 0)) {
-      com.google.protobuf.GeneratedMessage.writeString(output, 7, senhaDoEbook_);
+      output.writeMessage(7, getDataEHoraAdicao());
+    }
+    if (((bitField0_ & 0x00000080) != 0)) {
+      com.google.protobuf.GeneratedMessage.writeString(output, 8, senhaDoEbook_);
     }
     getUnknownFields().writeTo(output);
   }
@@ -358,14 +381,18 @@ private static final long serialVersionUID = 0L;
     }
     if (((bitField0_ & 0x00000010) != 0)) {
       size += com.google.protobuf.CodedOutputStream
-        .computeInt32Size(5, paginaAtual_);
+        .computeBytesSize(5, conteudo_);
     }
     if (((bitField0_ & 0x00000020) != 0)) {
       size += com.google.protobuf.CodedOutputStream
-        .computeMessageSize(6, getDataEHoraAdicao());
+        .computeInt32Size(6, paginaAtual_);
     }
     if (((bitField0_ & 0x00000040) != 0)) {
-      size += com.google.protobuf.GeneratedMessage.computeStringSize(7, senhaDoEbook_);
+      size += com.google.protobuf.CodedOutputStream
+        .computeMessageSize(7, getDataEHoraAdicao());
+    }
+    if (((bitField0_ & 0x00000080) != 0)) {
+      size += com.google.protobuf.GeneratedMessage.computeStringSize(8, senhaDoEbook_);
     }
     size += getUnknownFields().getSerializedSize();
     memoizedSize = size;
@@ -401,6 +428,11 @@ private static final long serialVersionUID = 0L;
     if (hasImagemCapa()) {
       if (!getImagemCapa()
           .equals(other.getImagemCapa())) return false;
+    }
+    if (hasConteudo() != other.hasConteudo()) return false;
+    if (hasConteudo()) {
+      if (!getConteudo()
+          .equals(other.getConteudo())) return false;
     }
     if (hasPaginaAtual() != other.hasPaginaAtual()) return false;
     if (hasPaginaAtual()) {
@@ -443,6 +475,10 @@ private static final long serialVersionUID = 0L;
     if (hasImagemCapa()) {
       hash = (37 * hash) + IMAGEM_CAPA_FIELD_NUMBER;
       hash = (53 * hash) + getImagemCapa().hashCode();
+    }
+    if (hasConteudo()) {
+      hash = (37 * hash) + CONTEUDO_FIELD_NUMBER;
+      hash = (53 * hash) + getConteudo().hashCode();
     }
     if (hasPaginaAtual()) {
       hash = (37 * hash) + PAGINA_ATUAL_FIELD_NUMBER;
@@ -597,6 +633,7 @@ private static final long serialVersionUID = 0L;
       nome_ = "";
       nomeArquivo_ = "";
       imagemCapa_ = com.google.protobuf.ByteString.EMPTY;
+      conteudo_ = com.google.protobuf.ByteString.EMPTY;
       paginaAtual_ = 0;
       dataEHoraAdicao_ = null;
       if (dataEHoraAdicaoBuilder_ != null) {
@@ -655,18 +692,22 @@ private static final long serialVersionUID = 0L;
         to_bitField0_ |= 0x00000008;
       }
       if (((from_bitField0_ & 0x00000010) != 0)) {
-        result.paginaAtual_ = paginaAtual_;
+        result.conteudo_ = conteudo_;
         to_bitField0_ |= 0x00000010;
       }
       if (((from_bitField0_ & 0x00000020) != 0)) {
-        result.dataEHoraAdicao_ = dataEHoraAdicaoBuilder_ == null
-            ? dataEHoraAdicao_
-            : dataEHoraAdicaoBuilder_.build();
+        result.paginaAtual_ = paginaAtual_;
         to_bitField0_ |= 0x00000020;
       }
       if (((from_bitField0_ & 0x00000040) != 0)) {
-        result.senhaDoEbook_ = senhaDoEbook_;
+        result.dataEHoraAdicao_ = dataEHoraAdicaoBuilder_ == null
+            ? dataEHoraAdicao_
+            : dataEHoraAdicaoBuilder_.build();
         to_bitField0_ |= 0x00000040;
+      }
+      if (((from_bitField0_ & 0x00000080) != 0)) {
+        result.senhaDoEbook_ = senhaDoEbook_;
+        to_bitField0_ |= 0x00000080;
       }
       result.bitField0_ |= to_bitField0_;
     }
@@ -701,6 +742,9 @@ private static final long serialVersionUID = 0L;
       if (other.hasImagemCapa()) {
         setImagemCapa(other.getImagemCapa());
       }
+      if (other.hasConteudo()) {
+        setConteudo(other.getConteudo());
+      }
       if (other.hasPaginaAtual()) {
         setPaginaAtual(other.getPaginaAtual());
       }
@@ -709,7 +753,7 @@ private static final long serialVersionUID = 0L;
       }
       if (other.hasSenhaDoEbook()) {
         senhaDoEbook_ = other.senhaDoEbook_;
-        bitField0_ |= 0x00000040;
+        bitField0_ |= 0x00000080;
         onChanged();
       }
       this.mergeUnknownFields(other.getUnknownFields());
@@ -758,23 +802,28 @@ private static final long serialVersionUID = 0L;
               bitField0_ |= 0x00000008;
               break;
             } // case 34
-            case 40: {
-              paginaAtual_ = input.readInt32();
+            case 42: {
+              conteudo_ = input.readBytes();
               bitField0_ |= 0x00000010;
               break;
-            } // case 40
-            case 50: {
+            } // case 42
+            case 48: {
+              paginaAtual_ = input.readInt32();
+              bitField0_ |= 0x00000020;
+              break;
+            } // case 48
+            case 58: {
               input.readMessage(
                   getDataEHoraAdicaoFieldBuilder().getBuilder(),
                   extensionRegistry);
-              bitField0_ |= 0x00000020;
-              break;
-            } // case 50
-            case 58: {
-              senhaDoEbook_ = input.readStringRequireUtf8();
               bitField0_ |= 0x00000040;
               break;
             } // case 58
+            case 66: {
+              senhaDoEbook_ = input.readStringRequireUtf8();
+              bitField0_ |= 0x00000080;
+              break;
+            } // case 66
             default: {
               if (!super.parseUnknownField(input, extensionRegistry, tag)) {
                 done = true; // was an endgroup tag
@@ -1069,17 +1118,57 @@ private static final long serialVersionUID = 0L;
       return this;
     }
 
+    private com.google.protobuf.ByteString conteudo_ = com.google.protobuf.ByteString.EMPTY;
+    /**
+     * <code>optional bytes conteudo = 5;</code>
+     * @return Whether the conteudo field is set.
+     */
+    @java.lang.Override
+    public boolean hasConteudo() {
+      return ((bitField0_ & 0x00000010) != 0);
+    }
+    /**
+     * <code>optional bytes conteudo = 5;</code>
+     * @return The conteudo.
+     */
+    @java.lang.Override
+    public com.google.protobuf.ByteString getConteudo() {
+      return conteudo_;
+    }
+    /**
+     * <code>optional bytes conteudo = 5;</code>
+     * @param value The conteudo to set.
+     * @return This builder for chaining.
+     */
+    public Builder setConteudo(com.google.protobuf.ByteString value) {
+      if (value == null) { throw new NullPointerException(); }
+      conteudo_ = value;
+      bitField0_ |= 0x00000010;
+      onChanged();
+      return this;
+    }
+    /**
+     * <code>optional bytes conteudo = 5;</code>
+     * @return This builder for chaining.
+     */
+    public Builder clearConteudo() {
+      bitField0_ = (bitField0_ & ~0x00000010);
+      conteudo_ = getDefaultInstance().getConteudo();
+      onChanged();
+      return this;
+    }
+
     private int paginaAtual_ ;
     /**
-     * <code>optional int32 pagina_atual = 5;</code>
+     * <code>optional int32 pagina_atual = 6;</code>
      * @return Whether the paginaAtual field is set.
      */
     @java.lang.Override
     public boolean hasPaginaAtual() {
-      return ((bitField0_ & 0x00000010) != 0);
+      return ((bitField0_ & 0x00000020) != 0);
     }
     /**
-     * <code>optional int32 pagina_atual = 5;</code>
+     * <code>optional int32 pagina_atual = 6;</code>
      * @return The paginaAtual.
      */
     @java.lang.Override
@@ -1087,23 +1176,23 @@ private static final long serialVersionUID = 0L;
       return paginaAtual_;
     }
     /**
-     * <code>optional int32 pagina_atual = 5;</code>
+     * <code>optional int32 pagina_atual = 6;</code>
      * @param value The paginaAtual to set.
      * @return This builder for chaining.
      */
     public Builder setPaginaAtual(int value) {
 
       paginaAtual_ = value;
-      bitField0_ |= 0x00000010;
+      bitField0_ |= 0x00000020;
       onChanged();
       return this;
     }
     /**
-     * <code>optional int32 pagina_atual = 5;</code>
+     * <code>optional int32 pagina_atual = 6;</code>
      * @return This builder for chaining.
      */
     public Builder clearPaginaAtual() {
-      bitField0_ = (bitField0_ & ~0x00000010);
+      bitField0_ = (bitField0_ & ~0x00000020);
       paginaAtual_ = 0;
       onChanged();
       return this;
@@ -1113,14 +1202,14 @@ private static final long serialVersionUID = 0L;
     private com.google.protobuf.SingleFieldBuilder<
         com.google.protobuf.Timestamp, com.google.protobuf.Timestamp.Builder, com.google.protobuf.TimestampOrBuilder> dataEHoraAdicaoBuilder_;
     /**
-     * <code>optional .google.protobuf.Timestamp data_e_hora_adicao = 6;</code>
+     * <code>optional .google.protobuf.Timestamp data_e_hora_adicao = 7;</code>
      * @return Whether the dataEHoraAdicao field is set.
      */
     public boolean hasDataEHoraAdicao() {
-      return ((bitField0_ & 0x00000020) != 0);
+      return ((bitField0_ & 0x00000040) != 0);
     }
     /**
-     * <code>optional .google.protobuf.Timestamp data_e_hora_adicao = 6;</code>
+     * <code>optional .google.protobuf.Timestamp data_e_hora_adicao = 7;</code>
      * @return The dataEHoraAdicao.
      */
     public com.google.protobuf.Timestamp getDataEHoraAdicao() {
@@ -1131,7 +1220,7 @@ private static final long serialVersionUID = 0L;
       }
     }
     /**
-     * <code>optional .google.protobuf.Timestamp data_e_hora_adicao = 6;</code>
+     * <code>optional .google.protobuf.Timestamp data_e_hora_adicao = 7;</code>
      */
     public Builder setDataEHoraAdicao(com.google.protobuf.Timestamp value) {
       if (dataEHoraAdicaoBuilder_ == null) {
@@ -1142,12 +1231,12 @@ private static final long serialVersionUID = 0L;
       } else {
         dataEHoraAdicaoBuilder_.setMessage(value);
       }
-      bitField0_ |= 0x00000020;
+      bitField0_ |= 0x00000040;
       onChanged();
       return this;
     }
     /**
-     * <code>optional .google.protobuf.Timestamp data_e_hora_adicao = 6;</code>
+     * <code>optional .google.protobuf.Timestamp data_e_hora_adicao = 7;</code>
      */
     public Builder setDataEHoraAdicao(
         com.google.protobuf.Timestamp.Builder builderForValue) {
@@ -1156,16 +1245,16 @@ private static final long serialVersionUID = 0L;
       } else {
         dataEHoraAdicaoBuilder_.setMessage(builderForValue.build());
       }
-      bitField0_ |= 0x00000020;
+      bitField0_ |= 0x00000040;
       onChanged();
       return this;
     }
     /**
-     * <code>optional .google.protobuf.Timestamp data_e_hora_adicao = 6;</code>
+     * <code>optional .google.protobuf.Timestamp data_e_hora_adicao = 7;</code>
      */
     public Builder mergeDataEHoraAdicao(com.google.protobuf.Timestamp value) {
       if (dataEHoraAdicaoBuilder_ == null) {
-        if (((bitField0_ & 0x00000020) != 0) &&
+        if (((bitField0_ & 0x00000040) != 0) &&
           dataEHoraAdicao_ != null &&
           dataEHoraAdicao_ != com.google.protobuf.Timestamp.getDefaultInstance()) {
           getDataEHoraAdicaoBuilder().mergeFrom(value);
@@ -1176,16 +1265,16 @@ private static final long serialVersionUID = 0L;
         dataEHoraAdicaoBuilder_.mergeFrom(value);
       }
       if (dataEHoraAdicao_ != null) {
-        bitField0_ |= 0x00000020;
+        bitField0_ |= 0x00000040;
         onChanged();
       }
       return this;
     }
     /**
-     * <code>optional .google.protobuf.Timestamp data_e_hora_adicao = 6;</code>
+     * <code>optional .google.protobuf.Timestamp data_e_hora_adicao = 7;</code>
      */
     public Builder clearDataEHoraAdicao() {
-      bitField0_ = (bitField0_ & ~0x00000020);
+      bitField0_ = (bitField0_ & ~0x00000040);
       dataEHoraAdicao_ = null;
       if (dataEHoraAdicaoBuilder_ != null) {
         dataEHoraAdicaoBuilder_.dispose();
@@ -1195,15 +1284,15 @@ private static final long serialVersionUID = 0L;
       return this;
     }
     /**
-     * <code>optional .google.protobuf.Timestamp data_e_hora_adicao = 6;</code>
+     * <code>optional .google.protobuf.Timestamp data_e_hora_adicao = 7;</code>
      */
     public com.google.protobuf.Timestamp.Builder getDataEHoraAdicaoBuilder() {
-      bitField0_ |= 0x00000020;
+      bitField0_ |= 0x00000040;
       onChanged();
       return getDataEHoraAdicaoFieldBuilder().getBuilder();
     }
     /**
-     * <code>optional .google.protobuf.Timestamp data_e_hora_adicao = 6;</code>
+     * <code>optional .google.protobuf.Timestamp data_e_hora_adicao = 7;</code>
      */
     public com.google.protobuf.TimestampOrBuilder getDataEHoraAdicaoOrBuilder() {
       if (dataEHoraAdicaoBuilder_ != null) {
@@ -1214,7 +1303,7 @@ private static final long serialVersionUID = 0L;
       }
     }
     /**
-     * <code>optional .google.protobuf.Timestamp data_e_hora_adicao = 6;</code>
+     * <code>optional .google.protobuf.Timestamp data_e_hora_adicao = 7;</code>
      */
     private com.google.protobuf.SingleFieldBuilder<
         com.google.protobuf.Timestamp, com.google.protobuf.Timestamp.Builder, com.google.protobuf.TimestampOrBuilder> 
@@ -1232,14 +1321,14 @@ private static final long serialVersionUID = 0L;
 
     private java.lang.Object senhaDoEbook_ = "";
     /**
-     * <code>optional string senha_do_ebook = 7;</code>
+     * <code>optional string senha_do_ebook = 8;</code>
      * @return Whether the senhaDoEbook field is set.
      */
     public boolean hasSenhaDoEbook() {
-      return ((bitField0_ & 0x00000040) != 0);
+      return ((bitField0_ & 0x00000080) != 0);
     }
     /**
-     * <code>optional string senha_do_ebook = 7;</code>
+     * <code>optional string senha_do_ebook = 8;</code>
      * @return The senhaDoEbook.
      */
     public java.lang.String getSenhaDoEbook() {
@@ -1255,7 +1344,7 @@ private static final long serialVersionUID = 0L;
       }
     }
     /**
-     * <code>optional string senha_do_ebook = 7;</code>
+     * <code>optional string senha_do_ebook = 8;</code>
      * @return The bytes for senhaDoEbook.
      */
     public com.google.protobuf.ByteString
@@ -1272,7 +1361,7 @@ private static final long serialVersionUID = 0L;
       }
     }
     /**
-     * <code>optional string senha_do_ebook = 7;</code>
+     * <code>optional string senha_do_ebook = 8;</code>
      * @param value The senhaDoEbook to set.
      * @return This builder for chaining.
      */
@@ -1280,22 +1369,22 @@ private static final long serialVersionUID = 0L;
         java.lang.String value) {
       if (value == null) { throw new NullPointerException(); }
       senhaDoEbook_ = value;
-      bitField0_ |= 0x00000040;
+      bitField0_ |= 0x00000080;
       onChanged();
       return this;
     }
     /**
-     * <code>optional string senha_do_ebook = 7;</code>
+     * <code>optional string senha_do_ebook = 8;</code>
      * @return This builder for chaining.
      */
     public Builder clearSenhaDoEbook() {
       senhaDoEbook_ = getDefaultInstance().getSenhaDoEbook();
-      bitField0_ = (bitField0_ & ~0x00000040);
+      bitField0_ = (bitField0_ & ~0x00000080);
       onChanged();
       return this;
     }
     /**
-     * <code>optional string senha_do_ebook = 7;</code>
+     * <code>optional string senha_do_ebook = 8;</code>
      * @param value The bytes for senhaDoEbook to set.
      * @return This builder for chaining.
      */
@@ -1304,7 +1393,7 @@ private static final long serialVersionUID = 0L;
       if (value == null) { throw new NullPointerException(); }
       checkByteStringIsUtf8(value);
       senhaDoEbook_ = value;
-      bitField0_ |= 0x00000040;
+      bitField0_ |= 0x00000080;
       onChanged();
       return this;
     }
